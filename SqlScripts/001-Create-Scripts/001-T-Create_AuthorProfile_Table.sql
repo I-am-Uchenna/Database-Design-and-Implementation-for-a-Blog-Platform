@@ -45,9 +45,10 @@ GO
 
 --===============| Adding CHECK Constraints |===============--
 
--- 1. 'experties' : Darf nicht leer sein oder nur aus Leerzeichen bestehen
+-- 1. 'experties' : Must not be empty or consist only of spaces
 --==========================================================--
 ALTER TABLE dbo.AuthorProfile ADD CONSTRAINT
 	CK_AuthorProfile_Experties 
 	CHECK (LEN(LTRIM(RTRIM(experties))) > 0)
 GO
+
