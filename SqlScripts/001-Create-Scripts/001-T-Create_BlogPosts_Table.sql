@@ -73,9 +73,9 @@ GO
 
 --===============| Adding CHECK Constraints |===============--
 
--- 'is_premium'	: Nur g�ltige Werte -> 0 (false) oder 1 (true)
--- 'is_deleted'	: Nur g�ltige Werte -> 0 (false) oder 1 (true)
--- 'create_at'	: Darf nicht in der Zukunft liegen.
+-- 'is_premium' : Only valid values ​​-> 0 (false) or 1 (true)
+-- 'is_deleted' : Only valid values ​​-> 0 (false) or 1 (true)
+-- 'create_at' : Must not be in the future.
 --==========================================================--
 
 ALTER TABLE dbo.BlogPosts ADD CONSTRAINT
@@ -89,3 +89,4 @@ GO
 ALTER TABLE dbo.BlogPosts ADD CONSTRAINT
     CK_BlogPosts_CreateAt CHECK (create_at <= GETDATE())
 GO
+
